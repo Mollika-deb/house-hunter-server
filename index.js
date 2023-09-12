@@ -29,6 +29,9 @@ async function run() {
     // Connect the client to the server	(optional starting in v4.7)
     await client.connect();
 
+    const database = client.db('curd');
+    const collection = database.collection('create')
+
 
     app.post('/users', (req, res)=>{
       const users = req.body
